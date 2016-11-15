@@ -79,6 +79,9 @@ namespace TableSource_CLE.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //field to set user role
+        public string Name { get; set; }
     }
 
     public class ResetPasswordViewModel

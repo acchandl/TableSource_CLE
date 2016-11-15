@@ -25,11 +25,30 @@
                     <li>@Html.ActionLink("Donate", "Create", "Donations")</li>
                     <li>@Html.ActionLink("Claim Donation", "Index", "Donations")</li>
                     <li>@Html.ActionLink("FAQ", "Index", "FAQ")</li>
+                    
+                    @*Below is how to Access User Roles
+                    <li>@Html.ActionLink("Role", "Index", "Role")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+    @*Message After Donating*@
+    @if (TempData["notice"] != null)
+    {
+        <div class="alert @TempData["notice"]">
+            <strong>@TempData["notice"]</strong> @TempData["notice"]
+        </div>
+    }
+
+    @*Message After Claiming Donation*@
+@if (TempData["notice2"] != null)
+{
+    <div class="alert @TempData["notice2"]">
+        <strong>@TempData["notice2"]</strong> @TempData["notice2"]
+    </div>
+}
+   
     <div class="container body-content">
         @RenderBody()
         <hr />

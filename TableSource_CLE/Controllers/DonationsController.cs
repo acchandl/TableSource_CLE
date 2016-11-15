@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using TableSource_CLE.CustomFilters;
 using TableSource_CLE.Models;
 
 namespace TableSource_CLE.Controllers
@@ -15,6 +16,7 @@ namespace TableSource_CLE.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Donations
+        [AuthLog(Roles = "Recipient Organization, Donor Organization")]
         public ActionResult Index()
         {
             var donations = db.Donations.Include(d => d.Category);
@@ -37,6 +39,7 @@ namespace TableSource_CLE.Controllers
         }
 
         // GET: Donations/Create
+        [AuthLog(Roles = "Recipient Organization, Donor Organization")]
         public ActionResult Create()
         {
             ViewBag.categoryID = new SelectList(db.Categories, "categoryID", "categoryName");
@@ -54,6 +57,7 @@ namespace TableSource_CLE.Controllers
             {
                 db.Donations.Add(donation);
                 db.SaveChanges();
+                TempData["notice"] = "Successfully Donated!";
                 return RedirectToAction("Index");
             }
 
@@ -117,6 +121,7 @@ namespace TableSource_CLE.Controllers
             Donation donation = db.Donations.Find(id);
             db.Donations.Remove(donation);
             db.SaveChanges();
+            TempData["notice2"] = "Donation Claimed!";
             return RedirectToAction("Index");
         }
 
