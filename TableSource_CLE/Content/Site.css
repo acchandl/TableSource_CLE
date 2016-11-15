@@ -1,0 +1,110 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+   
+}
+
+   footer{
+       position:absolute;
+       
+   }
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*Set jumbotron image*/
+
+.jumbotron {
+    position: relative;
+    background-image: url('../images/table.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+h2.lead, h1.jumbohead{
+    font-family: 'Special Elite', cursive;
+    color: white;
+    text-align:center
+    
+}
+
+h1.jumbohead{
+    font-size:600%;
+  
+}
+
+p.white, h2.white{
+    color: white;
+    font-family: 'Karma', serif;
+    font-weight:800;    
+    }
+
+p.white{
+    font-size: 130%;
+    font-weight:500;
+}
+
+
+
+body.home {
+    background-repeat: no-repeat;
+    background-image: url('../images/dinner with friends.jpg');
+    background-size: cover;
+}
+
+
+body.donorhome, body.recipienthome, body.faqhome {
+     background-image: url('../images/marble2.jpg');
+     background-repeat:  no-repeat;
+     background-size:cover;
+         
+}
+
+h2.faqfont, ul.faqfont{
+    color: black;
+    font-family: 'Karma', serif;
+    }
+
+h2.faqfont{
+    font-size:300%
+}
+
+ul.faqfont{
+    font-size:120%;
+}
+/*p, col-md-6 {
+    color:black
+}*/
+
+.datetimehome{
+    color:grey;
+    text-align:right;
+}
+
+
+
+h2.lead{
+    background-color:black;
+    font-size:200%;
+   
+}

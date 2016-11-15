@@ -1,0 +1,128 @@
+﻿@model TableSource_CLE.Models.Donation
+
+@*@{
+    ViewBag.Title = "Delete";
+}*@
+
+<body class="donorhome"></body>
+
+<h3>Are you sure you want to claim this donation?</h3>
+<div>
+    <h4>Donation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.categoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.categoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pickUpDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pickUpDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pickupTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pickupTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizationAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizationAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizationCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizationCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizationState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizationState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizationZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizationZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizationPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizationPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizationEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizationEmail)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Claim" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
