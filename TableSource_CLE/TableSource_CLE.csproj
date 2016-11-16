@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201611160052361_changed donation model.Designer.cs">
       <DependentUpon>201611160052361_changed donation model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611162122517_added annotaton and exception handling to donations.cs" />
+    <Compile Include="Migrations\201611162122517_added annotaton and exception handling to donations.Designer.cs">
+      <DependentUpon>201611162122517_added annotaton and exception handling to donations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -325,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611160052361_changed donation model.resx">
       <DependentUpon>201611160052361_changed donation model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611162122517_added annotaton and exception handling to donations.resx">
+      <DependentUpon>201611162122517_added annotaton and exception handling to donations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
