@@ -53,16 +53,27 @@ namespace TableSource_CLE.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "donationID,type,pickUpDate,pickupTime,weight,ExpirationDate,organizationName,organizationAddress,organizationCity,organizationState,organizationZip,organizationPhone,organizationEmail,categoryID")] Donation donation)
         {
-            if (ModelState.IsValid)
+            try
             {
                 db.Donations.Add(donation);
                 db.SaveChanges();
                 TempData["notice"] = "Successfully Donated!";
                 return RedirectToAction("Index");
             }
+            catch (Exception ex)
+            {
+                ViewBag.categoryID = new SelectList(db.Categories, "categoryID", "categoryName", donation.categoryID);
+                return View("Error", new HandleErrorInfo (ex, "Donation", "Create"));
+            }
+            //if (ModelState.IsValid)
+            //{
+            //    db.Donations.Add(donation);
+            //    db.SaveChanges();
+            //    TempData["notice"] = "Successfully Donated!";
+            //    return RedirectToAction("Index");
+            //}
 
-            ViewBag.categoryID = new SelectList(db.Categories, "categoryID", "categoryName", donation.categoryID);
-            return View(donation);
+            
         }
 
         // GET: Donations/Edit/5
@@ -88,14 +99,19 @@ namespace TableSource_CLE.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "donationID,type,pickUpDate,pickupTime,weight,ExpirationDate,organizationName,organizationAddress,organizationCity,organizationState,organizationZip,organizationPhone,organizationEmail,categoryID")] Donation donation)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
+            try
             {
                 db.Entry(donation).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.categoryID = new SelectList(db.Categories, "categoryID", "categoryName", donation.categoryID);
-            return View(donation);
+            catch (Exception exception)
+            {
+                ViewBag.categoryID = new SelectList(db.Categories, "categoryID", "categoryName", donation.categoryID);
+                return View("Error", new HandleErrorInfo(exception, "Donation", "Edit"));
+                //return View(donation);
+            }
         }
 
         // GET: Donations/Delete/5
