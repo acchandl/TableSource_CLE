@@ -77,6 +77,18 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Postmark, Version=2.0.127.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Postmark.2.1.5\lib\net45\Postmark.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Postmark.Convenience, Version=2.0.127.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Postmark.2.1.5\lib\net45\Postmark.Convenience.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -140,9 +152,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -216,6 +225,10 @@
     <Compile Include="Migrations\201611162122517_added annotaton and exception handling to donations.cs" />
     <Compile Include="Migrations\201611162122517_added annotaton and exception handling to donations.Designer.cs">
       <DependentUpon>201611162122517_added annotaton and exception handling to donations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611162151209_altered weight annotation.cs" />
+    <Compile Include="Migrations\201611162151209_altered weight annotation.Designer.cs">
+      <DependentUpon>201611162151209_altered weight annotation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -314,6 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Postmark\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -332,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611162122517_added annotaton and exception handling to donations.resx">
       <DependentUpon>201611162122517_added annotaton and exception handling to donations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611162151209_altered weight annotation.resx">
+      <DependentUpon>201611162151209_altered weight annotation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

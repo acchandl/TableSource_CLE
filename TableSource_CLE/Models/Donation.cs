@@ -25,7 +25,7 @@ namespace TableSource_CLE.Models
         public string pickupTime { get; set; }
 
         [Required]
-        [Display(Name = "Donation Weight")]
+        [Display(Name = "Donation Weight (lbs.)")]
         public double weight { get; set; }
 
         [Required]
