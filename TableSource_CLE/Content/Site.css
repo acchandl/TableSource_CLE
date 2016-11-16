@@ -29,11 +29,11 @@ textarea {
     max-width: 280px;
 }
 
-/*Set jumbotron image*/
+/*Set jumbotron images*/
 
-.jumbotron {
+.jumbofaq {
     position: relative;
-    background-image: url('../images/table.jpg');
+    background-image: url('../images/table2.jpg');
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -41,7 +41,55 @@ textarea {
     
 }
 
-h2.lead, h1.jumbohead{
+.jumbologin {
+    position: relative;
+    background-image: url('../images/table2.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.jumbodonate {
+    position: relative;
+    background-image: url('../images/table2.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;       
+}
+
+
+
+.jumboclaim {
+    position: relative;
+    background-image: url('../images/table2.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;       
+}
+
+.jumboregister {
+    position: relative;
+    background-image: url('../images/table2.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;       
+}
+
+.jumbodonations {
+    position: relative;
+    background-image: url('../images/table2.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;       
+}
+
+h2.lead, h1.jumbohead, h1.faqhead, h1.loginhead, h1.donatehead, h1.claimhead, h1.registerhead, h1.donationshead{
     font-family: 'Special Elite', cursive;
     color: white;
     text-align:center
@@ -73,7 +121,7 @@ body.home {
 }
 
 
-body.donorhome, body.recipienthome, body.faqhome {
+body.donorhome, body.recipienthome, body.faqhome, body.log, body.register{
      background-image: url('../images/marble2.jpg');
      background-repeat:  no-repeat;
      background-size:cover;
