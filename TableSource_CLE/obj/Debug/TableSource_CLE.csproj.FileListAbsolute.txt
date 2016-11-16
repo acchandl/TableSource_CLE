@@ -80,3 +80,6 @@ c:\users\wecancodeit\documents\visual studio 2015\Projects\TableSource_CLE\Table
 c:\users\wecancodeit\documents\visual studio 2015\Projects\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.csprojResolveAssemblyReference.cache
 c:\users\wecancodeit\documents\visual studio 2015\Projects\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.dll
 c:\users\wecancodeit\documents\visual studio 2015\Projects\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.pdb
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.Migrations.InitialCreate.resources
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.csproj.GenerateResource.Cache
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.Migrations.changeddonationmodel.resources
