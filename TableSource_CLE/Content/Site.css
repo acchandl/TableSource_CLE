@@ -33,7 +33,7 @@ textarea {
 
 .jumbofaq {
     position: relative;
-    background-image: url('../images/table2.jpg');
+    background-image: url('../images/figs4.jpg');
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -82,6 +82,15 @@ textarea {
 
 .jumbodonations {
     position: relative;
+    background-image: url('../images/raspberries.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;       
+}
+
+.jumbomanage {
+    position: relative;
     background-image: url('../images/table2.jpg');
     width: 100%;
     height: 100%;
@@ -89,7 +98,7 @@ textarea {
     background-repeat: no-repeat;       
 }
 
-h2.lead, h1.jumbohead, h1.faqhead, h1.loginhead, h1.donatehead, h1.claimhead, h1.registerhead, h1.donationshead{
+h2.lead, h1.jumbohead, h1.faqhead, h1.loginhead, h1.donatehead, h1.claimhead, h1.registerhead, h1.donationshead, h1.managehead{
     font-family: 'Special Elite', cursive;
     color: white;
     text-align:center
@@ -121,14 +130,14 @@ body.home {
 }
 
 
-body.donorhome, body.recipienthome, body.faqhome, body.log, body.register{
+body.donorhome, body.recipienthome, body.faqhome, body.log, body.register, body.managehome{
      background-image: url('../images/marble2.jpg');
      background-repeat:  no-repeat;
      background-size:cover;
          
 }
 
-h2.faqfont, ul.faqfont{
+h2.faqfont, ul.faqfont, h2.bodytext{
     color: black;
     font-family: 'Karma', serif;
     }

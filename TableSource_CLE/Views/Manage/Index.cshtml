@@ -1,14 +1,28 @@
-﻿@model TableSource_CLE.Models.IndexViewModel
+﻿<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Karma" rel="stylesheet">
+
+@model TableSource_CLE.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Manage Your Account Settings:";
 }
 
-<h2>@ViewBag.Title.</h2>
+<body class="managehome">
+</body>
+
+<div class="container">
+
+    <div class="jumbotron jumbomanage">
+        <h1 class="managehead">Account Settings</h1>
+    </div>
+
+</div>
+
+<h2 class="bodytext">@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Change your account settings</h4>
-    <hr />
+   
+    
     <dl class="dl-horizontal">
         <dt>Password:</dt>
         <dd>
