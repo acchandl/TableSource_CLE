@@ -91,3 +91,4 @@ C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\Table
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\bin\Postmark.xml
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\bin\Postmark.Convenience.pdb
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\bin\Postmark.Convenience.xml
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.Migrations.changeddisplaynamefordonationtype.resources

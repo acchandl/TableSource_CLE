@@ -8,14 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using TableSource_CLE.CustomFilters;
 using TableSource_CLE.Models;
+using PostmarkDotNet;
+using System.Threading.Tasks;
+
 
 namespace TableSource_CLE.Controllers
 {
     public class DonationsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+       
 
         // GET: Donations
+        //Added authentication roles
         [AuthLog(Roles = "Recipient Organization, Donor Organization")]
         public ActionResult Index()
         {
@@ -39,6 +44,7 @@ namespace TableSource_CLE.Controllers
         }
 
         // GET: Donations/Create
+        //Added authentication roles
         [AuthLog(Roles = "Recipient Organization, Donor Organization")]
         public ActionResult Create()
         {
@@ -114,6 +120,8 @@ namespace TableSource_CLE.Controllers
             }
         }
 
+
+
         // GET: Donations/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -130,6 +138,7 @@ namespace TableSource_CLE.Controllers
         }
 
         // POST: Donations/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -137,9 +146,53 @@ namespace TableSource_CLE.Controllers
             Donation donation = db.Donations.Find(id);
             db.Donations.Remove(donation);
             db.SaveChanges();
+           
             TempData["notice2"] = "Donation Claimed!";
-            return RedirectToAction("Index");
+            return RedirectToAction("SendTestMessage");
         }
+
+
+
+
+
+
+        //Email Function
+
+        public async Task<ActionResult> SendTestMessage(int? id)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                
+                var message = new PostmarkMessage()
+                {
+
+                    To = User.Identity.Name,
+                    //Cc = donation.organizationEmail,
+                    From = "account.admin@alexischandler.com",
+                    TrackOpens = true,
+                    Subject = "TableSource CLE: Donation Confirmation",
+                    TextBody = "Thank you for using TableSource, your pick-up information is: ",
+                    HtmlBody = "<html><body>Hello, thank you for donating! Here is your receipt:</body></html>",
+                    Tag = "Welcome"
+
+
+                };
+                var client = new PostmarkClient("fa8d86f7-930b-4ce1-8f9d-1dec86d91054");
+                var sendResult = await client.SendMessageAsync(message);
+             
+                //if (sendResult.Status == PostmarkStatus.Success) { /* Handle success */ }
+                if (sendResult.Status == PostmarkStatus.Success)
+                {
+                    return RedirectToAction("Index");
+                }
+                else { /* Resolve issue.*/ }
+            }
+            return View();
+        }
+
+
+
 
         protected override void Dispose(bool disposing)
         {
@@ -149,5 +202,10 @@ namespace TableSource_CLE.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+
+
     }
 }

@@ -12,7 +12,7 @@ namespace TableSource_CLE.Models
         public int donationID { get; set; }
 
         [Required]
-        [Display (Name = "Type of Organization/Company")]
+        [Display (Name = "Type of Food Donation")]
         public string type { get; set; }
 
         [DataType(DataType.Date)]
@@ -68,6 +68,7 @@ namespace TableSource_CLE.Models
         [Display(Name = "Contact Email")]
         public string organizationEmail { get; set; }
 
+        [Display(Name = "Organization/Company Type")]
         public int categoryID { get; set; }
 
         public virtual Category Category { get; set; }
