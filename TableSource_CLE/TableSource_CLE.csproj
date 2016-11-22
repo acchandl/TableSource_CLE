@@ -258,11 +258,16 @@
     <Content Include="Images\dinner party.jpg" />
     <Content Include="Images\dinner with friends.jpg" />
     <Content Include="Images\figs.jpg" />
+    <Content Include="Images\figs2.JPG" />
+    <Content Include="Images\figs3.JPG" />
+    <Content Include="Images\figs4.JPG" />
     <Content Include="Images\garlic.jpg" />
     <Content Include="Images\marble2.jpg" />
     <Content Include="Images\marble_texture4604.jpg" />
     <Content Include="Images\pear2.jpg" />
     <Content Include="Images\Pears.jpg" />
+    <Content Include="Images\pears3.JPG" />
+    <Content Include="Images\raspberries.JPG" />
     <Content Include="Images\strawberry.jpg" />
     <Content Include="Images\table-349678_960_720.jpg" />
     <Content Include="Images\Table.JPG" />
