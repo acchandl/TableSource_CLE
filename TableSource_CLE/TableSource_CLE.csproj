@@ -206,6 +206,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DonationsController.cs" />
+    <Compile Include="Controllers\EmailConfirmController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -229,6 +230,10 @@
     <Compile Include="Migrations\201611162151209_altered weight annotation.cs" />
     <Compile Include="Migrations\201611162151209_altered weight annotation.Designer.cs">
       <DependentUpon>201611162151209_altered weight annotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611182230157_changed display name for donation type.cs" />
+    <Compile Include="Migrations\201611182230157_changed display name for donation type.Designer.cs">
+      <DependentUpon>201611182230157_changed display name for donation type.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -329,6 +334,7 @@
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
+    <Content Include="Views\Donations\SendTestMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611162151209_altered weight annotation.resx">
       <DependentUpon>201611162151209_altered weight annotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611182230157_changed display name for donation type.resx">
+      <DependentUpon>201611182230157_changed display name for donation type.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
