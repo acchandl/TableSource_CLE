@@ -19,10 +19,10 @@ namespace TableSource_CLE.Controllers
         //private ApplicationDbContext db = new ApplicationDbContext();
         //public async Task SendTestMessage()
         //{
-        //    var message = new PostmarkMessage()
+        //    var message = new PostmarkMessage(int? id)
         //    {
         //        To = User.Identity.Name,
-        //        //Cc = "organizationEmail",
+        //        Cc = db.Donations.Find(id),
         //        From = "account.admin@alexischandler.com",
         //        TrackOpens = true,
         //        Subject = "TableSource CLE: Donation Confirmation",

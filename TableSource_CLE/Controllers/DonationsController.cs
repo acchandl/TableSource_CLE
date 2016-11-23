@@ -10,7 +10,7 @@ using TableSource_CLE.CustomFilters;
 using TableSource_CLE.Models;
 using PostmarkDotNet;
 using System.Threading.Tasks;
-
+using System.Web.Routing;
 
 namespace TableSource_CLE.Controllers
 {
@@ -42,6 +42,23 @@ namespace TableSource_CLE.Controllers
             }
             return View(donation);
         }
+
+
+        //Post: Donations/Details
+        //Needed to add this for the Email function
+        [HttpPost, ActionName("Details")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DetailsConfirmed(int id)
+        {
+            Donation donation = db.Donations.Find(id);
+            db.SaveChanges();
+            return RedirectToAction("SendTestMessage", new RouteValueDictionary(new { action = "SendTestMessage", id = id }));
+
+        }
+
+
+
+        
 
         // GET: Donations/Create
         //Added authentication roles
@@ -148,7 +165,8 @@ namespace TableSource_CLE.Controllers
             db.SaveChanges();
            
             TempData["notice2"] = "Donation Claimed!";
-            return RedirectToAction("SendTestMessage");
+            return RedirectToAction("Index");
+          
         }
 
 
@@ -161,35 +179,49 @@ namespace TableSource_CLE.Controllers
         public async Task<ActionResult> SendTestMessage(int? id)
         {
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                
+                Donation donation = db.Donations.Find(id);
                 var message = new PostmarkMessage()
+      
                 {
 
                     To = User.Identity.Name,
-                    //Cc = donation.organizationEmail,
+                    Cc = donation.organizationEmail,
                     From = "account.admin@alexischandler.com",
                     TrackOpens = true,
                     Subject = "TableSource CLE: Donation Confirmation",
-                    TextBody = "Thank you for using TableSource, your pick-up information is: ",
-                    HtmlBody = "<html><body>Hello, thank you for donating! Here is your receipt:</body></html>",
+            
+                    HtmlBody = "<html><body>Hello, thank you for using TableSource CLE! Here are the details of your transaction: </body></html>"  
+                    + "<p>" + User.Identity.Name + " Is picking up a donation from:  " 
+                    + "<br>" + donation.organizationName + "<br>" + 
+                    " Located at: " + donation.organizationAddress +
+                    "<br>" + donation.organizationCity + ", " + donation.organizationState + ", " + donation.organizationZip  + "<br>"
+                    + "Contact Email: " + donation.organizationEmail  + "<br>" + "Donation Type: " + donation.type + "<br>" + 
+                    "Pick Up Time: "+ donation.pickupTime + "<br> "
+                    + "Pick Up Date: " + donation.pickUpDate + "<br> " + "Donation Weight: " +
+                    donation.weight + " lbs." + "<br>" + "Donation Expiration Date: " + donation.ExpirationDate + "<br>" + "If you have any changes to this donation please contact the recipient organization at: "
+                    + donation.organizationPhone + "</p>",
+
                     Tag = "Welcome"
 
 
                 };
+              
+              
                 var client = new PostmarkClient("fa8d86f7-930b-4ce1-8f9d-1dec86d91054");
                 var sendResult = await client.SendMessageAsync(message);
-             
+
                 //if (sendResult.Status == PostmarkStatus.Success) { /* Handle success */ }
                 if (sendResult.Status == PostmarkStatus.Success)
                 {
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Delete", new RouteValueDictionary(new { action = "Delete", id = id }));
                 }
                 else { /* Resolve issue.*/ }
             }
             return View();
         }
+
 
 
 
