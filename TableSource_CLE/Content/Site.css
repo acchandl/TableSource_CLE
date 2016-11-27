@@ -29,23 +29,18 @@ textarea {
     max-width: 280px;
 }
 
-/*Set jumbotron images*/
+/*Set jumbotron images and formatting*/
 
 .jumbofaq {
     position: relative;
     background-image: url('../images/figs4.jpg');
-    width: 100%;
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    
 }
 
 .jumbologin {
     position: relative;
     background-image: url('../images/table2.jpg');
-    width: 100%;
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     
@@ -54,8 +49,6 @@ textarea {
 .jumbodonate {
     position: relative;
     background-image: url('../images/table2.jpg');
-    width: 100%;
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;       
 }
@@ -65,8 +58,6 @@ textarea {
 .jumboclaim {
     position: relative;
     background-image: url('../images/table2.jpg');
-    width: 100%;
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;       
 }
@@ -74,8 +65,6 @@ textarea {
 .jumboregister {
     position: relative;
     background-image: url('../images/table2.jpg');
-    width: 100%;
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;       
 }
@@ -83,8 +72,6 @@ textarea {
 .jumbodonations {
     position: relative;
     background-image: url('../images/raspberries.jpg');
-    width: 100%;
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;       
 }
@@ -92,8 +79,6 @@ textarea {
 .jumbomanage {
     position: relative;
     background-image: url('../images/table2.jpg');
-    width: 100%;
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;       
 }
@@ -105,6 +90,7 @@ h2.lead, h1.jumbohead, h1.faqhead, h1.loginhead, h1.donatehead, h1.claimhead, h1
     
 }
 
+
 h1.jumbohead{
     font-size:600%;
   
@@ -115,6 +101,10 @@ p.white, h2.white{
     font-family: 'Karma', serif;
     font-weight:800;    
     }
+
+.navbar-nav{
+    font-family: 'Karma', serif;
+}
 
 p.white{
     font-size: 130%;
@@ -132,12 +122,12 @@ body.home {
 
 body.donorhome, body.recipienthome, body.faqhome, body.log, body.register, body.managehome{
      background-image: url('../images/marble2.jpg');
-     background-repeat:  no-repeat;
+     background-repeat: repeat;
      background-size:cover;
          
 }
 
-h2.faqfont, ul.faqfont, h2.bodytext{
+h2.faqfont, ul.faqfont, h2.bodytext, .form-group, .dl-horizontal{
     color: black;
     font-family: 'Karma', serif;
     }
@@ -149,9 +139,7 @@ h2.faqfont{
 ul.faqfont{
     font-size:120%;
 }
-/*p, col-md-6 {
-    color:black
-}*/
+
 
 .datetimehome{
     color:grey;
@@ -163,5 +151,4 @@ ul.faqfont{
 h2.lead{
     background-color:black;
     font-size:200%;
-   
-}
+   }
