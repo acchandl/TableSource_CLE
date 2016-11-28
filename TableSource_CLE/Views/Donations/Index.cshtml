@@ -17,7 +17,8 @@
 </div>
 
 <h2 class="bodytext">All available donations and locations are listed below.</h2>
-<h2 class="bodytext">To claim a donation, please click "Claim Donation" in the far right column.  Onced claimed, you will recieve an e-mail verifying your claim.  A similar e-mail will be sent to the donating entity, letting them know your intention to pick up their donation.</h2>
+<h2 class="bodytext">To claim a donation, please click "Claim Donation" in the far right column.</h2>  
+<h2 class="bodytext">Once claimed, you will recieve an e-mail verifying your claim.  A similar e-mail will be sent to the donating entity, letting them know your intention to pick up their donation.</h2>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
@@ -108,9 +109,11 @@
             @Html.DisplayFor(modelItem => item.organizationEmail)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.donationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.donationID }) |
-            @Html.ActionLink("Claim Donation", "Delete", new { id=item.donationID })
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.donationID }) |*@
+            @Html.ActionLink("Claim Donation", "Details", new { id=item.donationID }) 
+            @*@Html.ActionLink("Claim", "Delete", new { id=item.donationID })*@
+        
+
         </td>
     </tr>
 }

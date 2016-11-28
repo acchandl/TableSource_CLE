@@ -8,14 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using TableSource_CLE.CustomFilters;
 using TableSource_CLE.Models;
+using PostmarkDotNet;
+using System.Threading.Tasks;
+using System.Web.Routing;
 
 namespace TableSource_CLE.Controllers
 {
     public class DonationsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+       
 
         // GET: Donations
+        //Added authentication roles
         [AuthLog(Roles = "Recipient Organization, Donor Organization")]
         public ActionResult Index()
         {
@@ -38,7 +43,25 @@ namespace TableSource_CLE.Controllers
             return View(donation);
         }
 
+
+        //Post: Donations/Details
+        //Needed to add this for the Email function
+        [HttpPost, ActionName("Details")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DetailsConfirmed(int id)
+        {
+            Donation donation = db.Donations.Find(id);
+            db.SaveChanges();
+            return RedirectToAction("SendTestMessage", new RouteValueDictionary(new { action = "SendTestMessage", id = id }));
+
+        }
+
+
+
+        
+
         // GET: Donations/Create
+        //Added authentication roles
         [AuthLog(Roles = "Recipient Organization, Donor Organization")]
         public ActionResult Create()
         {
@@ -57,8 +80,8 @@ namespace TableSource_CLE.Controllers
             {
                 db.Donations.Add(donation);
                 db.SaveChanges();
-                TempData["notice"] = "Successfully Donated!";
-                return RedirectToAction("Index");
+                TempData["notice"] = "Donation successful, an email has been sent to your inbox for confirmation!9 ";
+                return RedirectToAction("SendTestMessage1");
             }
             catch (Exception ex)
             {
@@ -114,6 +137,8 @@ namespace TableSource_CLE.Controllers
             }
         }
 
+
+
         // GET: Donations/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -130,6 +155,7 @@ namespace TableSource_CLE.Controllers
         }
 
         // POST: Donations/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -137,9 +163,115 @@ namespace TableSource_CLE.Controllers
             Donation donation = db.Donations.Find(id);
             db.Donations.Remove(donation);
             db.SaveChanges();
+           
             TempData["notice2"] = "Donation Claimed!";
             return RedirectToAction("Index");
+          
         }
+
+
+
+
+
+        //Email function after donating
+
+    
+
+        public async Task<ActionResult> SendTestMessage1(int? id)
+        {
+
+            if (ModelState.IsValid)
+            {
+              
+                var message = new PostmarkMessage()
+
+                {
+
+                    To = User.Identity.Name,
+                    From = "account.admin@alexischandler.com",
+                    TrackOpens = true,
+                    Subject = "TableSource CLE: Donation Confirmation",
+
+                    HtmlBody = "<html><body>Hello, thank you for using TableSource CLE! Thanks for donating, a second email will be sent if your donation is claimed, forwarding the claimant's contact info. </body></html>",
+
+                    Tag = "Welcome"
+
+
+                };
+
+
+                var client = new PostmarkClient("fa8d86f7-930b-4ce1-8f9d-1dec86d91054");
+                var sendResult = await client.SendMessageAsync(message);
+
+                //if (sendResult.Status == PostmarkStatus.Success) { /* Handle success */ }
+                if (sendResult.Status == PostmarkStatus.Success)
+                {
+                    return RedirectToAction("Index");
+                }
+                else { /* Resolve issue.*/ }
+            }
+            return View();
+        }
+
+
+
+
+
+
+
+
+
+        //Email Function after claiming donation
+
+        public async Task<ActionResult> SendTestMessage(int? id)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Donation donation = db.Donations.Find(id);
+                var message = new PostmarkMessage()
+      
+                {
+
+                    To = User.Identity.Name,
+                    Cc = donation.organizationEmail,
+                    From = "account.admin@alexischandler.com",
+                    TrackOpens = true,
+                    Subject = "TableSource CLE: Donation Confirmation",
+            
+                    HtmlBody = "<html><body>Hello, thank you for using TableSource CLE! Here are the details of your transaction: </body></html>"  
+                    + "<p>" + User.Identity.Name + " Is picking up a donation from:  " 
+                    + "<br>" + donation.organizationName + "<br>" + 
+                    " Located at: " + donation.organizationAddress +
+                    "<br>" + donation.organizationCity + ", " + donation.organizationState + ", " + donation.organizationZip  + "<br>"
+                    + "Contact Email: " + donation.organizationEmail  + "<br>" + "Donation Type: " + donation.type + "<br>" + 
+                    "Pick Up Time: "+ donation.pickupTime + "<br> "
+                    + "Pick Up Date: " + donation.pickUpDate + "<br> " + "Donation Weight: " +
+                    donation.weight + " lbs." + "<br>" + "Donation Expiration Date: " + donation.ExpirationDate + "<br>" + "If you have any changes to this donation please contact the recipient organization at: "
+                    + donation.organizationPhone + "</p>",
+
+                    Tag = "Welcome"
+
+
+                };
+              
+              
+                var client = new PostmarkClient("fa8d86f7-930b-4ce1-8f9d-1dec86d91054");
+                var sendResult = await client.SendMessageAsync(message);
+
+                //if (sendResult.Status == PostmarkStatus.Success) { /* Handle success */ }
+                if (sendResult.Status == PostmarkStatus.Success)
+                {
+                    return RedirectToAction("Delete", new RouteValueDictionary(new { action = "Delete", id = id }));
+                }
+                else { /* Resolve issue.*/ }
+            }
+            return View();
+        }
+
+
+
+
 
         protected override void Dispose(bool disposing)
         {
@@ -149,5 +281,10 @@ namespace TableSource_CLE.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+
+
     }
 }

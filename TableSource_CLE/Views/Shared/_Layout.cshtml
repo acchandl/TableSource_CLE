@@ -36,19 +36,19 @@
             </div>
         </div>
     </div>
-    @*Message After Donating*@
+    @*Alert After Donating*@
     @if (TempData["notice"] != null)
     {
         <div class="alert @TempData["notice"]">
-            <strong>@TempData["notice"]</strong> @TempData["notice"]
+            <strong>@TempData["notice"]</strong>
         </div>
     }
 
-    @*Message After Claiming Donation*@
+    @*Alert After Claiming Donation*@
 @if (TempData["notice2"] != null)
 {
     <div class="alert @TempData["notice2"]">
-        <strong>@TempData["notice2"]</strong> @TempData["notice2"]
+        <strong>@TempData["notice2"]</strong>
     </div>
 }
    

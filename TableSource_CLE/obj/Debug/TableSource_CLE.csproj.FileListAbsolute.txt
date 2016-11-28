@@ -91,6 +91,9 @@ C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\Table
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\bin\Postmark.xml
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\bin\Postmark.Convenience.pdb
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\bin\Postmark.Convenience.xml
+<<<<<<< HEAD
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.Migrations.changeddisplaynamefordonationtype.resources
+=======
 C:\Users\WeCanCodeIT\Desktop\TableSource_CLE\TableSource_CLE\bin\ApplicationInsights.config
 C:\Users\WeCanCodeIT\Desktop\TableSource_CLE\TableSource_CLE\bin\roslyn\csc.exe
 C:\Users\WeCanCodeIT\Desktop\TableSource_CLE\TableSource_CLE\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -184,3 +187,5 @@ C:\Users\WeCanCodeIT\Desktop\TableSource_CLE\TableSource_CLE\obj\Debug\TableSour
 C:\Users\WeCanCodeIT\Desktop\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.csproj.GenerateResource.Cache
 C:\Users\WeCanCodeIT\Desktop\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.dll
 C:\Users\WeCanCodeIT\Desktop\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.pdb
+>>>>>>> 9d4b2599c7d9a412df6a64675980a7ded63fbd9c
+C:\Users\WeCanCodeIT\Desktop\TableSource_CLE\TableSource_CLE\obj\Debug\TableSource_CLE.Migrations.changeddisplaynamefordonationtype.resources
