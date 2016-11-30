@@ -80,7 +80,7 @@ namespace TableSource_CLE.Controllers
             {
                 db.Donations.Add(donation);
                 db.SaveChanges();
-                TempData["notice"] = "Donation successful, an email has been sent to your inbox for confirmation!9 ";
+                TempData["notice"] = "Donation successful, an email has been sent to your inbox for confirmation!";
                 return RedirectToAction("SendTestMessage1");
             }
             catch (Exception ex)

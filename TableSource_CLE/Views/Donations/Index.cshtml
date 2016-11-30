@@ -6,7 +6,8 @@
     ViewBag.Title = "Index";
 }
 
-<body class="donorhome"></body>
+<body class="donorhome">
+</body>
 
 <div class="container">
 
@@ -17,105 +18,112 @@
 </div>
 
 <h2 class="bodytext">All available donations and locations are listed below.</h2>
-<h2 class="bodytext">To claim a donation, please click "Claim Donation" in the far right column.</h2>  
+<h2 class="bodytext">To claim a donation, please click "Claim Donation" in the far right column.</h2>
 <h2 class="bodytext">Once claimed, you will recieve an e-mail verifying your claim.  A similar e-mail will be sent to the donating entity, letting them know your intention to pick up their donation.</h2>
 
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
-<table class="table">
-    <tr>
-        <th>
-            Type of Organization/Company
-        </th>
-        <th>
-            Type of Food Donation
-        </th>
-        <th>
-            Pick-Up Date
-        </th>
-        <th>
-            Pick-Up Time
-        </th>
-        <th>
-            Weight
-        </th>
-        <th>
-            Expiration Date
-        </th>
-        <th>
-            Organization/Company Name
-        </th>
-        <th>
-            Pick-Up Address
-        </th>
-        <th>
-            City
-        </th>
-        <th>
-            State
-        </th>
-        <th>
-           Zip Code
-        </th>
-        <th>
-            Telephone Number
-        </th>
-        <th>
-            Email
-        </th>
-        <th></th>
-    </tr>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="table-responsive">
+    <table class="table table-condensed table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.organizationName)
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.categoryName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pickUpDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pickupTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.weight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExpirationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizationName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizationAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizationCity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizationState)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizationZip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizationPhone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.organizationEmail)
-        </td>
-        <td>
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.donationID }) |*@
-            @Html.ActionLink("Claim Donation", "Details", new { id=item.donationID }) 
-            @*@Html.ActionLink("Claim", "Delete", new { id=item.donationID })*@
-        
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pickUpDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pickupTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpirationDate)
+            </th>
+            <th>
+                Organization Category
 
-        </td>
-    </tr>
-}
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.organizationAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.organizationCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.organizationState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.organizationZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.organizationPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.organizationEmail)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organizationName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pickUpDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pickupTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpirationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.categoryName)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organizationAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organizationCity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organizationState)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organizationZip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organizationPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organizationEmail)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id=item.donationID }) |*@
+                    @Html.ActionLink("Claim Donation", "Details", new { id = item.donationID })
+                    @*@Html.ActionLink("Claim", "Delete", new { id=item.donationID })*@
+
+
+                </td>
+            </tr>
+
+        }
+
+    </table>
+</div>

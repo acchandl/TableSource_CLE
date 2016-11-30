@@ -29,7 +29,7 @@ textarea {
     max-width: 280px;
 }
 
-/*Set jumbotron images and formatting*/
+/*Sets jumbotron images and formatting for each page*/
 
 .jumbofaq {
     position: relative;
@@ -52,8 +52,6 @@ textarea {
     background-size: cover;
     background-repeat: no-repeat;       
 }
-
-
 
 .jumboclaim {
     position: relative;
@@ -83,11 +81,13 @@ textarea {
     background-repeat: no-repeat;       
 }
 
+/*Formats the fonts across the site*/
+
 h2.lead, h1.jumbohead, h1.faqhead, h1.loginhead, h1.donatehead, h1.claimhead, h1.registerhead, h1.donationshead, h1.managehead{
     font-family: 'Special Elite', cursive;
     color: white;
     text-align:center
-    
+
 }
 
 
@@ -96,14 +96,16 @@ h1.jumbohead{
   
 }
 
-p.white, h2.white{
+p.white, h2.white, h2.white1{
     color: white;
     font-family: 'Karma', serif;
-    font-weight:800;    
+    font-weight:800;   
+    font-size: 50px;
     }
 
 .navbar-nav{
     font-family: 'Karma', serif;
+    font-weight: 800;
 }
 
 p.white{
@@ -111,21 +113,6 @@ p.white{
     font-weight:500;
 }
 
-
-
-body.home {
-    background-repeat: no-repeat;
-    background-image: url('../images/dinner with friends.jpg');
-    background-size: cover;
-}
-
-
-body.donorhome, body.recipienthome, body.faqhome, body.log, body.register, body.managehome{
-     background-image: url('../images/marble2.jpg');
-     background-repeat: repeat;
-     background-size:cover;
-         
-}
 
 h2.faqfont, ul.faqfont, h2.bodytext, .form-group, .dl-horizontal{
     color: black;
@@ -140,15 +127,75 @@ ul.faqfont{
     font-size:120%;
 }
 
-
-.datetimehome{
-    color:grey;
-    text-align:right;
-}
-
-
-
 h2.lead{
     background-color:black;
     font-size:200%;
    }
+
+
+.white1{
+    text-align:center
+}
+
+.table-responsive{
+    color: black;
+    font-family: 'Karma', serif;
+
+}
+
+/*Sets the background for the home page*/
+body.home {
+    background-repeat: no-repeat;
+    background-image: url('../images/dinner with friends4.jpg');
+    background-size: cover;
+}
+
+/*Sets the background for all pages except the home page*/
+body.donorhome, body.recipienthome, body.faqhome, body.log, body.register, body.managehome{
+     background-image: url('../images/marble2.jpg');
+     background-repeat: repeat;
+     background-size:cover;
+         
+}
+
+
+/*.datetimehome{
+    color:grey;
+    text-align:right;
+}*/
+
+
+
+
+
+
+/*div.firstslide {
+  width:100%;
+  overflow:hidden;
+}
+div.firstslide p {
+  
+  animation: firstslide 5s;
+}*/
+
+
+/*This fades in the "Problem" and "Solution" paragraphs on the first page.*/
+@keyframes fadeIn {
+    to {opacity:1;
+
+    }
+}
+
+.firstslide{
+    opacity:0;
+    animation: fadeIn 2s ease-in 1 forwards;
+}
+
+.secondslide{
+    opacity:0;
+    animation-delay: 2s;
+    animation: fadeIn 2s ease-in 1 forwards;
+    animation-delay: 2s;
+
+}
+

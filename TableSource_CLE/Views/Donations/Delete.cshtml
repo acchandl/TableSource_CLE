@@ -8,12 +8,14 @@
 <div class="container">
 
     <div class="jumbotron jumboclaim">
-        <h1 class="claimhead">Claim Donation</h1>
+        <h1 class="claimhead">Claimed Donation</h1>
     </div>
 
 </div>
 
-<h2 class="bodytext">You have claimed the following donation and an e-mail has been sent to both your organization and the donor. Please contact the donor directly if your pick-up arrangements change.</h2>
+<h2 class="bodytext">You have claimed the following donation and an e-mail has been sent to both your organization and the donor.</h2>
+    <h2 class="bodytext">Please contact the donor directly if your pick-up arrangements change.</h2>
+    <h2 class="bodytext">To complete your order please click the "Complete Order" button below.</h2>
 <div>
         
     <hr />
@@ -128,7 +130,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Claim" class="btn btn-default" /> |
+            <input type="submit" value="Complete Order" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
