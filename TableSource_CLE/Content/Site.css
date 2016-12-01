@@ -137,6 +137,10 @@ h2.lead{
     text-align:center
 }
 
+.bodytext{
+    text-align:center;
+}
+
 .table-responsive{
     color: black;
     font-family: 'Karma', serif;
@@ -159,24 +163,33 @@ body.donorhome, body.recipienthome, body.faqhome, body.log, body.register, body.
 }
 
 
-/*.datetimehome{
-    color:grey;
-    text-align:right;
-}*/
+
+/*centering the donation table*/
 
 
-
-
-
-
-/*div.firstslide {
-  width:100%;
-  overflow:hidden;
+.form-horizontal
+{border-radius: 5px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
 }
-div.firstslide p {
-  
-  animation: firstslide 5s;
-}*/
+
+.type{
+   float: none;
+    
+    display:block;
+    font-size:18px;
+    margin-left:117px;
+   
+   
+}
+
+
+
+.col-lg-10, .col-lg-offset-1 {
+    float: right;
+}
+
 
 
 /*This fades in the "Problem" and "Solution" paragraphs on the first page.*/
